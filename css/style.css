@@ -1780,7 +1780,6 @@
         padding: 0 20px;
     }
     .main-partners-link {
-      width: 30%;
       margin: 0 auto;
     }
     .footer{
@@ -1899,4 +1898,13 @@
         transition-delay: .5s;
     }
 
+}
+/*Костыль для блока партнеры*/
+@media (max-width: 517px){
+    .main-partners{
+        margin: 20px auto;
+        justify-content: center;
+        background-size: cover;
+        
+    }    
 }
