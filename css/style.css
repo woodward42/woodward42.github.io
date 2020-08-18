@@ -1902,7 +1902,8 @@
 /*Костыль для блока партнеры*/
 @media (max-width: 517px){
     .main-partners{
-        margin: 20px auto;
+        margin: 0px auto;
+        padding: 10px 0;
         justify-content: center;
         background-size: cover;
         
