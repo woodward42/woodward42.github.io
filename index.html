@@ -446,10 +446,13 @@
     </footer>
    </div>
     <script>
-        let button = document.querySelector('.header-center-description-btn');
+        window.onload = function(){
+            console.log(document.querySelector('.main-videopresentation-desc-btn'));
+        }
+        let button = document.querySelector('.main-videopresentation-desc-btn');
         button.onclick = function(){
             window.scrollTo(0,1500);
-        }
+        };
     </script>
 </body>
 
