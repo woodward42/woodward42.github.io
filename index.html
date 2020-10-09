@@ -446,13 +446,9 @@
     </footer>
    </div>
     <script>
-        window.onload = function(){
-            console.log(document.querySelector('.main-videopresentation-desc-btn'));
+        document.querySelector('.main-videopresentation-desc-btn').onclick = function(){
+            window.scrollTo(0,600)
         }
-        let button = document.querySelector('.main-videopresentation-desc-btn');
-        button.onclick = function(){
-            window.scrollTo(0,1500);
-        };
     </script>
 </body>
 
