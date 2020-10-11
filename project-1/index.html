@@ -42,14 +42,6 @@
             loadIcon.classList.add('fas','fa-spinner','fa-spin');
             slider.insertAdjacentElement('beforebegin',loadIcon);
 
-        let leftArrow = document.createElement('i');
-            leftArrow.classList.add('fas','fa-chevron-circle-left','arrow-left');
-            slider.insertAdjacentElement('beforeend',leftArrow);
-
-        let rightArrow = document.createElement('i');
-            rightArrow.classList.add('fas','fa-chevron-circle-right','arrow-right');
-            slider.insertAdjacentElement('beforeend',rightArrow);
-
         window.addEventListener('load', function (){
             //убираем иконку загрузки
             loadIcon.style.display = 'none';
@@ -57,6 +49,14 @@
             //показываем первый слайд
             images.init();
 
+        let leftArrow = document.createElement('i');
+            leftArrow.classList.add('fas','fa-chevron-circle-left','arrow-left');
+            slider.insertAdjacentElement('beforeend',leftArrow);
+
+        let rightArrow = document.createElement('i');
+            rightArrow.classList.add('fas','fa-chevron-circle-right','arrow-right');
+            slider.insertAdjacentElement('beforeend',rightArrow);
+            
             //создаем слушателей для иконок влево-вправо
             leftArrow.addEventListener('click',function(){
                 images.nextImageLeft();
