@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+}
+.header-heading{
+    display: block;
+    padding: 15px;
+    text-align: center;
+    background-color: black;
+    color: red;
+    font-size: 42px;
+    font-family: monospace, sans-serif;
+
+}
