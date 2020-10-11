@@ -2,6 +2,9 @@ body{
     margin: 0;
     background-color: black;
 }
+.header{
+    box-sizing: border-box;  
+}
 .header-heading{
     display: block;
     padding: 15px;
@@ -17,6 +20,11 @@ body{
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 0 40%;
 }
 .main-slider{
     display: flex;
