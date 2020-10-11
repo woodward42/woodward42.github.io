@@ -61,9 +61,12 @@ body{
     right: 10%;
     z-index: 2;
 }
+.arrow-left:hover,
+.arrow-right:hover{
+    cursor: pointer;
+}
 .arrow-left:active,
 .arrow-right:active{
-    cursor: pointer;
     color: darkgoldenrod;
 }
 .fa-spinner{
