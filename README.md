@@ -1,2 +1,2 @@
-#  <a href="woodward42.github.io">woodward42.github.io</a>
+#woodward42.github.io
 Хостинг для GB
