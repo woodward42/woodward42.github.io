@@ -1,3 +1,2 @@
-# woodward42.github.io
-Хостинг для GB
+woodward42.github.io
 
