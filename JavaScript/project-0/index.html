@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>project-1</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-heading">Приветствую тебя. Тут мы тестируем слайдер!</h1>
+    </header>
+    <main class="main">
+        <div class="main-slider">
+            <div class="main-slider-item hidden-slide">
+                <img src="./img/1.jpg" alt="1" class="main-slider-item-img" width="1024" height="768">
+            </div>
+            <div class="main-slider-item hidden-slide">
+                <img src="./img/2.jpg" alt="1" class="main-slider-item-img" width="1024" height="768">
+            </div>
+            <div class="main-slider-item hidden-slide">
+                <img src="./img/3.jpg" alt="1" class="main-slider-item-img" width="1024" height="768">
+            </div>
+            <div class="main-slider-item hidden-slide">
+                <img src="./img/4.jpg" alt="1" class="main-slider-item-img" width="1024" height="768">
+            </div>
+            <div class="main-slider-item hidden-slide">
+                <img src="./img/5.jpg" alt="1" class="main-slider-item-img" width="1024" height="768">
+            </div>
+        </div>
+    </main>
+<script>
+        'use strict';
+
+        //создаем иконки загрузки контента + переключатели слайдера
+        let slider = document.querySelector('.main-slider');
+
+        let loadIcon = document.createElement('i');
+            loadIcon.classList.add('fas','fa-spinner','fa-spin');
+            slider.insertAdjacentElement('beforebegin',loadIcon);
+
+        window.addEventListener('load', function (){
+            //убираем иконку загрузки
+            loadIcon.style.display = 'none';
+
+            //показываем первый слайд
+            images.init();
+
+        let leftArrow = document.createElement('i');
+            leftArrow.classList.add('fas','fa-chevron-circle-left','arrow-left');
+            slider.insertAdjacentElement('beforeend',leftArrow);
+
+        let rightArrow = document.createElement('i');
+            rightArrow.classList.add('fas','fa-chevron-circle-right','arrow-right');
+            slider.insertAdjacentElement('beforeend',rightArrow);
+            
+            //создаем слушателей для иконок влево-вправо
+            leftArrow.addEventListener('click',function(){
+                images.nextImageLeft();
+                window.scrollTo({top: 0, behavior: "smooth"});
+            });
+            rightArrow.addEventListener('click',function(){
+                images.nextImageRight();
+                window.scrollTo({top: 0, behavior: "smooth"});
+            });
+        });
+
+        //создаем объект с фотками
+        let images = {
+            curIndex: 0,
+            slides: [],
+            init(){
+                this.slides = document.querySelectorAll('.main-slider-item');
+                this.showSlideWithCurrentIndex();
+            },
+            showSlideWithCurrentIndex(){
+                this.slides[this.curIndex].classList.remove('hidden-slide');
+            },
+            nextImageLeft(){
+                //прячем слайд, который показывается
+                this.hideVisibleImage();
+
+                if(this.curIndex === 0){
+                    this.curIndex = this.slides.length-1;
+                }
+                else{
+                    this.curIndex--;
+                }
+                this.showSlideWithCurrentIndex();
+            },
+            nextImageRight(){
+                // //прячем слайд, который показывается
+                this.hideVisibleImage();
+
+                if(this.curIndex === this.slides.length-1){
+                    this.curIndex = 0;
+                }
+                else{
+                    this.curIndex++;
+                }
+                this.showSlideWithCurrentIndex();
+            },
+            hideVisibleImage(){
+                //находим элемент с классом main-slider-item и БЕЗ класса hidden-slide
+                document.querySelector('.main-slider-item:not(.hidden-slide)').classList.add('hidden-slide');
+            }
+        };
+</script>
+</body>
+</html>
