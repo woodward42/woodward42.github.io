@@ -1,3 +1,5 @@
-# Макет WAXOM
 
-Десктопная версия (по макету) + мобильная версия
+## [Макет Waxom](https://woodward42.github.io/HTML/project-0/)
+
+
+Desktop/Mobile
